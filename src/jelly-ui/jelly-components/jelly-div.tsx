@@ -1,16 +1,11 @@
 import React, { useId } from "react";
 import JellyShine from "./jelly-shine";
+import { variantStyles, type Variant } from "../constants";
 
 interface JellyDivProps {
   children?: React.ReactNode;
   onClick?: () => void;
-  variant?:
-    | "primary"
-    | "secondary"
-    | "accent"
-    | "danger"
-    | "warning"
-    | "success";
+  variant?: Variant;
   className?: string;
 }
 
@@ -21,14 +16,6 @@ const JellyDiv: React.FC<JellyDivProps> = ({
 }) => {
   const id = useId();
   const baseStyles = `jelly-surface squishy ${className}`;
-  const variantStyles = {
-    primary: "jelly-colour-primary",
-    secondary: "",
-    accent: "",
-    danger: "",
-    warning: "",
-    success: "",
-  };
 
   return (
     <div id={id} className={`${baseStyles} ${variantStyles[variant]}`}>

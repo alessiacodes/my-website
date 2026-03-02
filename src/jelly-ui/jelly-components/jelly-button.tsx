@@ -1,16 +1,11 @@
 import React, { useId } from "react";
 import JellyShine from "./jelly-shine";
+import { variantStyles, type Variant } from "../constants";
 
 interface JellyButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
-  variant?:
-    | "primary"
-    | "secondary"
-    | "accent"
-    | "danger"
-    | "warning"
-    | "success";
+  variant?: Variant;
   disabled?: boolean;
   className?: string;
   circular?: boolean;
@@ -26,14 +21,6 @@ const JellyButton: React.FC<JellyButtonProps> = ({
 }) => {
   const id = useId();
   const baseStyles = `jelly-surface squishy squishy-sm p-2 flex items-center justify-center ${circular ? "rounded-full h-10 w-10" : ""}`;
-  const variantStyles = {
-    primary: "jelly-colour-primary",
-    secondary: "",
-    accent: "",
-    danger: "",
-    warning: "",
-    success: "",
-  };
 
   return (
     <button
