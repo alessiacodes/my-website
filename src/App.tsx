@@ -1,14 +1,15 @@
 import "./App.css";
-import "./components/jelly.css";
-import JellyButton from "./components/jelly-components/jelly-button";
-import { JellyEmail, JellyHeart } from "./components/jelly-icons/jelly-icon-svgs";
+import "./jelly-ui/jelly.css";
+import JellyButton from "./jelly-ui/jelly-components/jelly-button";
+import { JellyEmail, JellyHeart } from "./jelly-ui/jelly-icons/jelly-icon-svgs";
+import { JellyNavbar } from "./jelly-ui/jelly-components/jelly-navbar";
 
 function App() {
   return (
     <>
       <div className="relative w-[1000px] h-[400px]">
-
-        <JellyButton variant="primary" circular={true}>c
+        <JellyNavbar />
+        <JellyButton variant="primary">click me
         </JellyButton>
         <JellyEmail />
         <JellyHeart />

@@ -5,9 +5,9 @@ export default function JellyShine({
   width = "100%",
   height = "100%",
   cx = 100,
-  cy = 125,
+  cy = 50,
   rx = 100,
-  ry = 70,
+  ry = 50,
   blur = 10,
   intensity = 0.75,
   className = "",
@@ -18,8 +18,8 @@ export default function JellyShine({
 
   return (
     <svg
-      className={`jelly-shine ${className}`}
-      viewBox="0 0 200 300"
+      className={`jelly-shine z-10 ${className}`}
+      viewBox="0 0 200 120"
       preserveAspectRatio="none"
       width={width}
       height={height}

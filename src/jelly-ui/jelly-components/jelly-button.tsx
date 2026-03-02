@@ -25,7 +25,7 @@ const JellyButton: React.FC<JellyButtonProps> = ({
   circular = false,
 }) => {
   const id = useId();
-  const baseStyles = `jelly-surface squishy p-4 flex items-center justify-center ${circular ? "rounded-full h-10 w-10" : ""}`;
+  const baseStyles = `jelly-surface squishy squishy-sm p-2 flex items-center justify-center ${circular ? "rounded-full h-10 w-10" : ""}`;
   const variantStyles = {
     primary: "jelly-colour-primary",
     secondary: "",
@@ -45,7 +45,13 @@ const JellyButton: React.FC<JellyButtonProps> = ({
       } ${className}`}
     >
       <span className="relative z-2 text-2xl">{children}</span>
-      <JellyShine></JellyShine>
+      <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
+        <JellyShine
+          className="relative top-0.5 left-1"
+          height="35%"
+          width="50%"
+        />
+      </div>
     </button>
   );
 };
