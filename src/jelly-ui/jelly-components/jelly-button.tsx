@@ -3,9 +3,10 @@ import JellyShine from "./jelly-shine";
 import { variantStyles, type Variant } from "../constants";
 
 interface JellyButtonProps {
+  contentSize?: "sm" | "md" | "lg" | "xl" | "2xl";
   children: React.ReactNode;
   onClick?: () => void;
-  variant?: Variant;
+  styleVariant?: Variant;
   disabled?: boolean;
   className?: string;
   circular?: boolean;
@@ -14,10 +15,11 @@ interface JellyButtonProps {
 const JellyButton: React.FC<JellyButtonProps> = ({
   children,
   onClick,
-  variant = "primary",
+  styleVariant = "primary",
   disabled = false,
   className = "",
   circular = false,
+  contentSize = "md",
 }) => {
   const id = useId();
   const baseStyles = `jelly-surface squishy squishy-sm p-2 flex items-center justify-center ${circular ? "rounded-full h-10 w-10" : ""}`;
@@ -27,11 +29,11 @@ const JellyButton: React.FC<JellyButtonProps> = ({
       id={id}
       onClick={onClick}
       disabled={disabled}
-      className={`${baseStyles} ${variantStyles[variant]} ${
+      className={`${baseStyles} ${variantStyles[styleVariant]} ${
         disabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer"
       } ${className}`}
     >
-      <span className="relative z-2 text-2xl">{children}</span>
+      <span className={`relative z-2 text-${contentSize}`}>{children}</span>
       <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
         <JellyShine
           className="relative top-0.5 left-1"

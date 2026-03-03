@@ -9,7 +9,7 @@ function App() {
     <>
       <div className="relative w-[1000px] h-[400px]">
         <JellyNavbar />
-        <JellyButton variant="primary">click me
+        <JellyButton styleVariant="primary" contentSize="lg">click me
         </JellyButton>
         <JellyEmail />
         <JellyHeart />
